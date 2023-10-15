@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    let apple = 10;
+    //alert(apple);
+    //console.log(apple);
+    let condition = 'Well played';
+    let somevarstring = '100';
+    let somevarint = 145;
+    let somebool = true;
+    console.log(somevarstring)
+    console.log(somevarint)
+    console.log(somebool)
+    console.log('string + int =', somevarstring + somevarint)
+    console.log('int + bool =', somevarint + somebool)
+    console.log('string + bool =',somevarstring + somebool)
+
+    console.log('Good game ' + condition)
+
+    let numbers = [];
+
+    console.log('Это число сгенерировано с помощью функции getRandomNumber:', getRandomNumber(-100,100));
+    function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    for (let i = 0; i < 10; i++) {
+    numbers[i] = getRandomNumber(-100, 200);
+    }
+
+
+    let filteredNumbers = numbers.filter((numbers) => numbers > 0 );
+
+    console.log('Этот массив заполнен случайными числами от -100 до 200:'); 
+    console.log(numbers); 
+    console.log('Этот массив содержит только положительные значения первого массива:'); 
+    console.log(filteredNumbers); 
+    
+    function MultArray(arr, num) {
+        let multipliedArray = arr.map((arr) => arr * num);
+    return multipliedArray;
+    }   
+    console.log('Данный массив получен умножением исходного на 2:');
+    console.log(MultArray(numbers, 2));
+    
+    const generateRandomWord = () => {
+    const words = ['Стол', 'Стул', 'Компьютер', 'Клавиатура','Курсач', ];
+    let randomIndex = getRandomNumber(0, words.length);
+    return words[randomIndex]; 
+    };
+    console.log('Это слово сгенерировано случайно: ', generateRandomWord());
+
+    let person = {
+    firstName : 'Maria',
+    surname: 'Sklyarova',
+    patronymic : 'Vladimirovna',
+    birthday : '06/02/2001',
+    hobby : 'Sewing',
+    group : 'AIB',
+    }
+
+    person.getInfo = function() {
+    const currentDate = new Date();
+    const birthYear = new Date(this.birthday).getFullYear();
+    const age = currentDate.getFullYear() - birthYear;
+
+    return `Name: ${this.firstName} ${this.surname} ${this.patronymic}
+        Birthday: ${this.birthday}
+        Hobby: ${this.hobby}
+        Age: ${age}`;
+    };
+
+alert(person.getInfo());
+ 
+const ZP = {
+Смирнов : 50000.00,
+Иванов : 75000.00,
+Кузнецова : 60000.00,
+Попов : 55000.00,
+Иванова : 70000.00,
+Петрова : 80000.00,
+Соколова : 85000.00,
+Михайлов : 90000.00,
+Новикова : 65000.00,
+Федорова : 95000.00
+    }
+
+function TotalSalary(salaries) {
+    let totalSalary = 0;
+
+    for (let key in salaries) {
+        totalSalary += salaries[key];
+    }
+
+    return totalSalary;
+}
+
+console.log('Суммарная ЗП всех сотрудников:', TotalSalary(ZP));
+
+</script>
+</body>
+</html>
