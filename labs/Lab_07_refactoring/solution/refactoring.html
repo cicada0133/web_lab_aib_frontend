@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+
+function task_1() {
+    let firstValue = prompt('var one'); 
+    let secondValue = prompt('var two'); 
+    if (firstValue === secondValue) {
+        console.log('values ​​are equal')
+    } else { console.log('values ​​are not equal');
+    }
+    const anyWord = 'world'; 
+    firstValue = firstValue + anyWord;
+}
+
+function task_2() {
+   
+    const fruitsArray = [
+          { fruit: "apple", color: "green" },
+          { fruit: "strawberry", color: "red" },
+          { fruit: "blueberry", color: "blue" },
+          { fruit: "raspberry", color: "light red" },
+          { fruit: "lemon", color: "yellow" },
+        ];
+
+        for (let i = 0; i < fruitsArray.length; i++) {
+            console.log(fruitsArray[i].fruit);
+        }
+
+        for (let i = 0; i < fruitsArray.length; i++) {
+            console.log(fruitsArray[i]);
+        }
+}
+        
+
+function task_3() {       
+    let employees;
+    let salary;
+    while (!employees || !salary) {
+        employees = prompt("Введите количество сотрудников:");
+        salary = prompt("Введите зарплату на одного человека:");
+    }
+    alert("Затраты на зарплату сотрудников: " + employees * salary);
+}
+
+function task_4() {
+    const students = [
+          { FIO: "Петров А.А.", mark: 5 },
+          { FIO: "Иванов Б.Б.", mark: 3.4 },
+          { FIO: "Сидоров Г.Г.", mark: 9 },
+          { FIO: "Немолодой Д.Д", mark: 2 },
+          { FIO: "Молодой Е.Е", mark: 3.4 },
+        ];
+
+        let sum = 0;
+        let count = 0;
+        let badstudents = [];
+
+        for (let i = 0; i < students.length; i++) {
+          const mark = students[i].mark;
+          if (mark < 4) {
+            badstudents.push(students[i]);
+          }
+          sum += mark;
+          count++;
+        }
+        let averageMark = sum / count;
+        console.log("Средняя оценка: " + averageMark);
+        console.log("Плохие студенты:");
+        if (badstudents.length === 0) {
+          console.log("Таких нет");
+        } else {
+          badstudents.forEach((znachenie) => {
+            console.log(
+              "Фио: " + znachenie.FIO + "; Оценка: " + znachenie.mark
+            );
+          });
+        }
+}
+
+task_1();
+task_2();
+task_3();
+task_4();
+
+</script>
+</body>
+</html>
