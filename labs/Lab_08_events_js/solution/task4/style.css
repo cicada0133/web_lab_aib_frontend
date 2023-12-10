@@ -1,0 +1,16 @@
+.color-box {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .full-width {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .color-block {
+    width: calc(100% / 5);
+    height: calc(300px / 3);
+  }
